@@ -1,0 +1,389 @@
+:root {
+  color-scheme: dark;
+  font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --ink: #f3f2ef;
+  --muted: #8d929e;
+  --accent: #c9f36a;
+  --panel: #1b1e29;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(ellipse at 82% 18%, rgb(96 87 144 / 17%), transparent 34rem),
+    radial-gradient(ellipse at 7% 84%, rgb(105 142 81 / 9%), transparent 30rem),
+    #10131d;
+}
+
+button {
+  font: inherit;
+}
+
+.page-shell {
+  display: flex;
+  flex-direction: column;
+  width: min(1120px, calc(100% - 64px));
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+.topbar,
+.page-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topbar {
+  height: 100px;
+  border-bottom: 1px solid rgb(255 255 255 / 8%);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: grid;
+  width: 29px;
+  height: 29px;
+  place-items: center;
+  border-radius: 9px;
+  color: #14171c;
+  background: var(--accent);
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.brand-dot {
+  color: var(--accent);
+}
+
+.topbar-label,
+.page-footer,
+.card-footer,
+.card-version,
+.live-status,
+.eyebrow {
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 10px;
+  letter-spacing: 1.25px;
+}
+
+.topbar-label {
+  color: #d3d4d8;
+}
+
+.topbar-label span {
+  margin-left: 9px;
+  color: var(--muted);
+}
+
+.calculator-layout {
+  display: grid;
+  flex: 1;
+  grid-template-columns: minmax(0, 1fr) 420px;
+  align-items: center;
+  gap: 7%;
+  padding: 66px 0 74px;
+}
+
+.intro {
+  max-width: 490px;
+  padding-bottom: 12px;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 25px;
+  color: #a7abb5;
+}
+
+.eyebrow span,
+.live-status span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 14px rgb(201 243 106 / 45%);
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(42px, 5.2vw, 66px);
+  font-weight: 600;
+  letter-spacing: -4px;
+  line-height: 1.08;
+}
+
+h1 span {
+  color: var(--accent);
+}
+
+.intro-copy {
+  max-width: 350px;
+  margin: 25px 0 0;
+  color: #9da2ae;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.shortcut-note {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 42px;
+  color: #858b98;
+  font-size: 11px;
+}
+
+.shortcut-icon {
+  display: grid;
+  width: 25px;
+  height: 25px;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 15%);
+  border-radius: 7px;
+  color: var(--accent);
+  font-size: 15px;
+}
+
+.calculator-card {
+  overflow: hidden;
+  padding: 21px 23px 15px;
+  border: 1px solid rgb(255 255 255 / 9%);
+  border-radius: 22px;
+  background: linear-gradient(145deg, rgb(31 34 46 / 97%), rgb(24 27 37 / 98%));
+  box-shadow: 0 32px 90px rgb(0 0 0 / 35%), inset 0 1px rgb(255 255 255 / 4%);
+}
+
+.card-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 24px;
+}
+
+.live-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #a9adb7;
+  font-size: 9px;
+}
+
+.live-status span {
+  width: 6px;
+  height: 6px;
+}
+
+.card-version {
+  color: #777d8a;
+  font-size: 9px;
+}
+
+.display {
+  display: flex;
+  min-height: 155px;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 20px 2px 22px;
+  overflow: hidden;
+}
+
+.expression {
+  min-height: 22px;
+  max-width: 100%;
+  overflow: hidden;
+  color: #9298a5;
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.result {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  color: var(--ink);
+  font-size: clamp(38px, 6vw, 54px);
+  font-weight: 500;
+  letter-spacing: -2.5px;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.error-message {
+  min-height: 15px;
+  margin: 4px 0 0;
+  color: #ff9a94;
+  font-size: 11px;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.key {
+  display: grid;
+  min-height: 59px;
+  place-items: center;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  color: #f0f0ef;
+  background: #292c38;
+  cursor: pointer;
+  font-size: 19px;
+  font-weight: 600;
+  transition: background 130ms ease, border-color 130ms ease, transform 130ms ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.key:hover {
+  border-color: rgb(255 255 255 / 13%);
+  background: #343845;
+}
+
+.key:active {
+  transform: scale(0.96);
+}
+
+.key:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.key-utility {
+  color: #c4c7cf;
+  background: #252834;
+  font-size: 15px;
+}
+
+.key-operator {
+  color: var(--accent);
+  background: #30362c;
+  font-size: 21px;
+}
+
+.key-operator:hover {
+  background: #3a4431;
+}
+
+.key-equals {
+  color: #171a13;
+  background: var(--accent);
+  font-size: 24px;
+}
+
+.key-equals:hover {
+  background: #d7ff80;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 17px;
+  color: #747a87;
+  font-size: 8px;
+  letter-spacing: 1px;
+}
+
+.card-footer span:last-child {
+  color: var(--accent);
+  font-size: 14px;
+}
+
+.page-footer {
+  min-height: 58px;
+  border-top: 1px solid rgb(255 255 255 / 8%);
+  color: #707582;
+  font-size: 9px;
+}
+
+@media (max-width: 780px) {
+  .page-shell {
+    width: min(520px, calc(100% - 40px));
+  }
+
+  .topbar {
+    height: 76px;
+  }
+
+  .calculator-layout {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 42px;
+    padding: 54px 0;
+  }
+
+  .intro {
+    width: 100%;
+  }
+
+  .intro-copy {
+    margin-top: 17px;
+  }
+
+  .shortcut-note {
+    display: none;
+  }
+
+  .calculator-card {
+    width: min(100%, 420px);
+  }
+
+  .page-footer {
+    gap: 16px;
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 390px) {
+  .page-shell {
+    width: calc(100% - 28px);
+  }
+
+  h1 {
+    font-size: 42px;
+    letter-spacing: -2.8px;
+  }
+
+  .calculator-card {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .keypad {
+    gap: 7px;
+  }
+
+  .key {
+    min-height: 54px;
+  }
+}

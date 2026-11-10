@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#10131d" />
+    <meta
+      name="description"
+      content="A clean, modern calculator for quick everyday math."
+    />
+    <title>Nova — Calculator</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+    <script src="/static/app.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Nova calculator home">
+          <span class="brand-mark" aria-hidden="true">n</span>
+          <span>nova<span class="brand-dot">.</span></span>
+        </a>
+        <span class="topbar-label">CALCULATOR <span>01</span></span>
+      </header>
+
+      <section class="calculator-layout" aria-label="Calculator">
+        <div class="intro">
+          <p class="eyebrow"><span></span> YOUR SPACE TO THINK</p>
+          <h1>Make room<br />for <span>what’s next.</span></h1>
+          <p class="intro-copy">
+            A little clarity goes a long way. Do the math, then get back to
+            what matters.
+          </p>
+          <div class="shortcut-note">
+            <span class="shortcut-icon" aria-hidden="true">↵</span>
+            <span>Type on your keyboard to calculate</span>
+          </div>
+        </div>
+
+        <div class="calculator-card">
+          <div class="card-topline">
+            <div class="live-status"><span></span> READY WHEN YOU ARE</div>
+            <span class="card-version">N° 001</span>
+          </div>
+
+          <div class="display" aria-live="polite" aria-atomic="true">
+            <div class="expression" id="expression" aria-label="Expression"></div>
+            <output class="result" id="result" aria-label="Result">0</output>
+            <p class="error-message" id="error" role="alert"></p>
+          </div>
+
+          <div class="keypad" aria-label="Calculator keys">
+            <button class="key key-utility" type="button" data-action="clear">AC</button>
+            <button class="key key-utility" type="button" data-action="backspace" aria-label="Delete last character">⌫</button>
+            <button class="key key-utility" type="button" data-value="(">(</button>
+            <button class="key key-operator" type="button" data-value="/" aria-label="Divide">÷</button>
+
+            <button class="key" type="button" data-value="7">7</button>
+            <button class="key" type="button" data-value="8">8</button>
+            <button class="key" type="button" data-value="9">9</button>
+            <button class="key key-operator" type="button" data-value="*">×</button>
+
+            <button class="key" type="button" data-value="4">4</button>
+            <button class="key" type="button" data-value="5">5</button>
+            <button class="key" type="button" data-value="6">6</button>
+            <button class="key key-operator" type="button" data-value="-">−</button>
+
+            <button class="key" type="button" data-value="1">1</button>
+            <button class="key" type="button" data-value="2">2</button>
+            <button class="key" type="button" data-value="3">3</button>
+            <button class="key key-operator" type="button" data-value="+">+</button>
+
+            <button class="key key-utility" type="button" data-value="%">%</button>
+            <button class="key" type="button" data-value="0">0</button>
+            <button class="key" type="button" data-value=".">.</button>
+            <button class="key key-equals" type="button" data-action="calculate" aria-label="Calculate">=</button>
+          </div>
+          <footer class="card-footer">
+            <span>BUILT FOR THE BIG AND LITTLE THINGS</span>
+            <span aria-hidden="true">✳</span>
+          </footer>
+        </div>
+      </section>
+
+      <footer class="page-footer">
+        <span>THOUGHTFULLY MADE FOR EVERYDAY MOMENTS</span>
+        <span>© NOVA 2026</span>
+      </footer>
+    </main>
+  </body>
+</html>
